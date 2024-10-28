@@ -1,8 +1,15 @@
 package ru.netology.javaqa95.HWmvn10_OOP.services;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
     private int currentRadioStations;
-
     private int minRadioStations = 0;
     private int totalRadioStations = 10;
     private int maxRadioStations = minRadioStations + totalRadioStations - 1;
@@ -16,32 +23,9 @@ public class Radio {
         this.maxRadioStations = minRadioStations + totalRadioStations - 1;
     }
 
-    public Radio() {
-
-    }
-
-    public int getCurrentRadioStations() {
-        return currentRadioStations;
-    }
-
-    public int getMinRadioStations() {
-        return minRadioStations;
-    }
-
-    public int getMaxRadioStations() {
-        return maxRadioStations;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
+    public void nextRadioStations() {
+        int target = currentRadioStations + 1;
+        setCurrentRadioStations(target);
     }
 
     public void setCurrentRadioStations(int newCurrentRadioStations) {
@@ -69,10 +53,6 @@ public class Radio {
         currentVolume = newCurrentVolume;
     }
 
-    public void nextRadioStations() {
-        int target = currentRadioStations + 1;
-        setCurrentRadioStations(target);
-    }
 
     public void prevRadioStations() {
         int target = currentRadioStations - 1;
